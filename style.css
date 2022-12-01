@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+
+}
+
+body {
+  height: 100vh;
+  font-family: "Vollkorn", serif;
+}
+.container {
+  width: 95%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 15%;
+}
+article {
+  width: 30%;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  max-width: 10rem;
+  transition: .3s;
+  box-shadow: 0 1px 5px lightgray;
+}
+article:hover {
+  box-shadow: 0 2px 5px gray;
+
+}
+.balance-article {
+  background-color: orangered;
+  color: orange;
+}
+
+.income-article {
+  background-color: green;
+  color: greenyellow;
+}
+
+.expenses-article {
+  background-color: darkred;
+  color: lightcoral;
+}
+article p {
+  font-size: 2em;
+  color: white;
+}
+
+main{
+    height: 85%;
+}
+fieldset {
+    border: 1px solid black;
+    height: 25%;
+    margin: 2rem 0;
+    border-radius: .5rem;
+}
+
+.income-section, .expenses-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.income-section > *,
+.expenses-section > *,
+.log-section > * {
+    width: 100%;
+    font-size: 1.2em;
+    padding: .5em 0;
+    border-radius: .5rem;
+  box-shadow: 0 2px 5px gray;
+
+}
+.income-section input, 
+.expenses-section input, 
+.log-section p {
+    background-color: lightgray;
+    padding-left: .2em;
+    padding-right: .2em;
+
+}
+.log-section p {
+    margin: .5rem 0;
+}
+.income-section button {
+    background-color: green;
+}
+.expenses-section button {
+    background-color: darkred;
+}
+
+fieldset.log{
+    height: 30%;
+    overflow: auto;
+}
+.fa-trash {
+    float: right;
+    color: darkred;
+    cursor: pointer;
+    transition: .3s;
+}
+.fa-trash:hover {
+   text-shadow: 0 3px 3px gray;
+}
+
+
+/* Tablet */
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  article {
+    max-width: 15rem;
+  }
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  fieldset.income, fieldset.expenses {
+    width: 48%;
+  }
+  fieldset.log {
+    height: 50%;
+    width: 100%;
+  }
+  
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  article {
+    max-width: 25rem;
+  }
+}
+
+/* XXL Desktop */
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
