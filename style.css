@@ -69,6 +69,7 @@ fieldset {
     height: 30%;
     margin: 2rem 0;
     border-radius: .5rem;
+    background-color: #eee;
 }
 
 .income-section, .expenses-section {
@@ -95,16 +96,18 @@ fieldset {
 .income-section input, 
 .expenses-section input, 
 .log-section p {
-    background-color: #eee;
     padding-left: .2em;
     padding-right: .2em;
 
 }
 .income-section button {
     background-color: green;
+    color: white;
 }
 .expenses-section button {
     background-color: darkred;
+    color: white;
+
 }
 
 fieldset.log{
@@ -122,8 +125,10 @@ fieldset.log{
 }
 
 p.log-exp {
+  
     border-bottom: 2px solid red;
 }
+
 
 p.log-inc {
     border-bottom: 2px solid green;

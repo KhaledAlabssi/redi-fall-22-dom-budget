@@ -60,7 +60,7 @@ expensesFrom.addEventListener("submit", function (e) {
   }
   expenses += Number(amount)
     getBalance()
-    expensesLog()
+    expensesLog(amount, text)
 })
 
 
@@ -68,7 +68,7 @@ function incomeLog(amount, text) {
     let newLog = document.createElement('p')
     newLog.classList.add('log-inc')
     newLog.innerHTML = `
-    <span>${amount}</span> ${text}<i class="fa-solid fa-trash"></i>
+    <span>${amount}</span> ${text}<i class="fa-solid fa-trash" onclick="deleteTrans(this)"></i>
     `
     logList.insertBefore(newLog, logList.firstChild)
     
@@ -78,8 +78,23 @@ function expensesLog(amount, text) {
   let newLog = document.createElement("p")
   newLog.classList.add("log-exp")
   newLog.innerHTML = `
-    <span>${amount}</span> ${text}<i class="fa-solid fa-trash"></i>
+    <span>${amount}</span> ${text}<i class="fa-solid fa-trash" onclick="deleteTrans(this)"></i>
     `
   logList.insertBefore(newLog, logList.firstChild)
+}
+
+function deleteTrans(e) {
+  let eValue = Number(e.parentElement.children[0].textContent)
+  let ele = e.parentElement
+  if (ele.classList.contains("log-inc")) {
+    income -= eValue
+    getBalance()
+    ele.remove()
+  } else {
+    expenses -= eValue
+    getBalance()
+    ele.remove()
+  }
+  
 }
 
